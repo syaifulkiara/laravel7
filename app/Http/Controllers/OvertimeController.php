@@ -100,6 +100,9 @@ class OvertimeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $overtime = Overtime::findOrFail($id);
+        $overtime->delete();
+
+        return redirect()->back()->with('success','Data Berhasil Dihapus');
     }
 }
