@@ -79,9 +79,12 @@
                 <td>{{date('d-m-Y', strtotime($row->created_at))}}</td>
                 <td style="text-align: center;">
                   <div class="btn-group">
-                    <a href="{{ route('overtime.edit', $row->id)}}" ><i class="fa fa-edit"></i></a> &nbsp;  
-                    <a href="" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i>
-                    </a>
+                    <a href="{{ route('overtime.edit', $row->id)}}" class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit Data"><i class="fa fa-edit"></i></a> &nbsp;  
+                    <form action="{{ route('overtime.destroy', $row->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                  <button type="submit" class="btn btn-sm" type="submit" onclick="return confirm('Yakin Mau Dhapus')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus Data" ><i class="fa fa-trash"></i></button>
+                </form>
                   </div>  
                 </td>
               </tr>
