@@ -15,6 +15,11 @@
     </div>
   </div>
 </div>
+@if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div><br />
+  @endif
 <!-- end page title end breadcrumb -->
 <div class="row">
   <div class="col-lg-12 col-sm-6">
