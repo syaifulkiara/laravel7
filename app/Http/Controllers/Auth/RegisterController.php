@@ -76,11 +76,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'avatar' =>'/images/avatar/' .$avatarname,
         ]);
-        }
+        }else{
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        }
     }
 }
